@@ -1,0 +1,8 @@
+.container .row {
+  margin-top: 16px;
+}
+
+.mat-card-image {
+  height: 240px;
+  object-fit: cover;
+}

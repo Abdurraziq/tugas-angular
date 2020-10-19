@@ -1,0 +1,29 @@
+<div class="container content">
+    <h1 class="mat-h1">List Book</h1>
+    <mat-divider></mat-divider>
+  
+    <div class="row">
+      <div *ngFor="let barang of daftarProduk" class="col">
+        <mat-card class="mat-elevation-z4">
+          <img mat-card-image src="{{ barang.gambar }}" alt="Photo of a Shiba Inu">
+          <mat-card-title-group>
+            <mat-card-title>{{ barang.nama }}</mat-card-title>
+            <mat-card-subtitle>${{ barang.harga }}</mat-card-subtitle>
+          </mat-card-title-group>
+          <mat-card-content>
+            <p *ngIf="barang.deskripsi; else tidak_ada">{{ barang.deskripsi }}</p>
+            <ng-template #tidak_ada>Deskripsi tidak tersedia.</ng-template>
+          </mat-card-content>
+          <mat-divider></mat-divider>
+          <mat-card-actions>
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Heart">shopping_cart</mat-icon>
+            </button>
+            <button mat-icon-button color="accent">
+              <mat-icon aria-label="Heart">favorite</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
